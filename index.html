@@ -3,35 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memo Image</title>
+    <title>The Prophecy</title>
+    <!-- Favicon link: Make sure to place a file named 'favicon.png' in the same directory! -->
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
-        /* The CSS below styles the page. 
-        It sets the body to a black background and centers the image.
-        */
+        /* Base styling: Black background, full height */
         body {
-            /* Sets the background color to black */
             background-color: #000000; 
-            /* Ensures the body takes up the full viewport height */
-            height: 100vh; 
-            /* Removes default margin */
-            margin: 0; 
-            /* Flexbox properties to center the image */
+            margin: 0;
+            padding: 40px 0; /* Adds space above the first and below the last image */
+            min-height: 100vh; /* Ensures the black background covers the entire viewport */
+
+            /* Flexbox setup for vertical stacking and horizontal centering */
             display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center;    /* Center vertically */
-            
+            flex-direction: column; /* Stacks all child elements vertically */
+            align-items: center;    /* Centers items horizontally */
         }
 
-        /* Styles for the image element */
-        .centered-image {
-            /* Makes the image fit within the viewport while maintaining aspect ratio */
-            max-width: 100%;
-            max-height: 100%;
+        /* Styles for the individual images */
+        .page-image {
+            /* Ensures images are responsive and don't overflow the screen */
+            max-width: 90vw; 
+            height: auto;
+            /* Sets the vertical space (120px) below each image */
+            margin-bottom: 120px; 
+            /* Optional: Adds a subtle white border/shadow for better visibility on black */
+            border-radius: 6px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); 
+        }
+
+        /* Removes the bottom margin from the last image to maintain clean padding */
+        .page-image:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
 <body>
-    <img src="memo.gif" alt="A new prophecy." class="centered-image">
-
+    <!-- 
+    The images are stacked vertically and centered with 60px spacing between them. 
+    Replace the placeholder filenames (memo1.png, memo2.png, etc.) with your actual images.
+    You can easily add more <img> tags here for additional images.
+    -->
+    <img src="memo1.png" alt="First prophecy" class="page-image">
+    <img src="memo2.png" alt="Second prophecy" class="page-image">
+    <img src="memo3.png" alt="Third prophecy" class="page-image">
+    <img src="memo4.png" alt="Fourth prophecy" class="page-image">
+    
 </body>
 </html>
